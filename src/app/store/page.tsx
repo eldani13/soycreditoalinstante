@@ -6,12 +6,13 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Modal from "@/components/Modal";
 import { productos } from "../data/telefonos";
+import { Producto } from "@/interfaces/Productos";
 
 export default function StorePage() {
   const [marcaFiltro, setMarcaFiltro] = useState("");
   const [categoriaFiltro, setCategoriaFiltro] = useState("");
   const [busqueda, setBusqueda] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Producto | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const marcas = [...new Set(productos.map((p) => p.marca))];
@@ -28,7 +29,7 @@ export default function StorePage() {
     return filtraMarca && filtraCategoria && filtraBusqueda;
   });
 
-  const handleOpenModal = (producto: any) => {
+  const handleOpenModal = (producto: Producto) => {
     setSelectedProduct(producto);
     setIsModalOpen(true);
   };

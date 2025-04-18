@@ -1,15 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Producto } from "@/interfaces/Productos";
+
 
 interface ModalProps {
   isOpen: boolean;
-  producto: any;
+  producto: Producto | null; 
   onClose: () => void;
 }
 
+
 export default function Modal({ isOpen, producto, onClose }: ModalProps) {
-  if (!isOpen) return null;
+  if (!isOpen || !producto) return null;
+
 
   const handleCloseModal = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
