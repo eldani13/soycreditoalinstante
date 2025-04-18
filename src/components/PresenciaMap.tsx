@@ -47,8 +47,8 @@ export default function PresenciaMap({ zonas }: { zonas: Zona[] }) {
     <MapContainer
       center={position}
       zoom={9}
-      scrollWheelZoom={false}
-      className="h-[500px] w-full rounded-xl shadow-lg border-2 border-blue-600"
+      scrollWheelZoom={true}
+      className="h-[500px] w-full rounded-xl shadow-lg border-2 border-blue-600 z-10 relative"
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

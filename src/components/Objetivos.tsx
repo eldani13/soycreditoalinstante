@@ -5,10 +5,10 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 export default function Objetivos() {
   const items = [
-    'Establecer una presencia sólida en el mercado',
-    'Aumentar la cantidad de clientes en un 15% en los próximos 6 meses.',
-    'Realizar campañas publicitarias de forma frecuente.',
-    'Incrementar la satisfacción del cliente.',
+    'Brindar soluciones de financiamiento accesibles, seguras y rápidas para la compra de teléfonos celulares.',
+    'Simplificar el proceso de solicitud de crédito, eliminando barreras como trámites complicados o historial crediticio exigente.',
+    'Optimizar nuestros tiempos de respuesta, reduciendo el tiempo entre la solicitud del crédito y la aprobación final.',
+    'Consolidar alianzas estratégicas con distribuidores y operadores, que nos permitan ampliar la oferta de productos con financiación.',
   ];
 
   return (

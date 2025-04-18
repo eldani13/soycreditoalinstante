@@ -28,15 +28,19 @@ export default function QuienesSomos() {
             {" "}
             CRÉDITO AL INSTANTE,
           </span>{" "}
-          es una empresa que nace en el 2024 con el fin de abrirse a nuevos
-          cliente, basándose en la experiencia como agencia estratéga con mas de
-          <strong> 8 años de experiencia</strong> y con presencia en diferentes
-          zonas del país, esto con el objetivo de acercar a nuestros aliados a
-          mas publico. Ofrecemos la oportunidad de ampliar sus portafolio de
-          clientes y llegar a lugares de difícil acceso, contamos con personal
-          calificados y colaboradores estratégicos que llevaran tu empresa a
-          otro nivel, impulsando e incrementando sus ventas{" "}
-          <strong className="text-[#FBBF24]">ventas.</strong>
+          es una empresa nacida en <strong>2019</strong> , con la misión de
+          facilitar el acceso a tecnología para todos. Nos especializamos en la
+          venta de celulares a crédito, ofreciendo soluciones rápidas,
+          accesibles y seguras para que más personas puedan estrenar su teléfono
+          sin complicaciones. Aunque somos una marca joven, contamos con un
+          equipo con más de 8 años de experiencia en el sector comercial y
+          financiero, con presencia en distintas zonas del país. Nuestro
+          compromiso es conectar a más personas con productos tecnológicos,
+          brindando alternativas de pago cómodas y atención personalizada.
+          Trabajamos con <strong className="text-[#FBBF24]">aliados </strong>{" "}
+          estratégicos y personal capacitado para llegar a lugares de difícil
+          acceso, impulsando así el crecimiento de nuestros clientes y
+          democratizando el acceso a la tecnología.
         </motion.p>
       </div>
     </section>

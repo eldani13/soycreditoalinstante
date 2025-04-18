@@ -1,7 +1,8 @@
 "use client";
 
-import { BeakerIcon } from "@heroicons/react/24/outline";
+import { UserGroupIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import MarcasCarrusel from "./MarcasCarrusel";
 
 export default function Alianza() {
   return (
@@ -19,16 +20,16 @@ export default function Alianza() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <BeakerIcon className="h-14 w-14 text-[#FBBF24]" />
+          <UserGroupIcon className="h-14 w-14 text-[#FBBF24]" />
         </motion.div>
 
         <motion.h3
-          className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#1E40AF] mb-6"
+          className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Propuesta de Alianza Estratégica
+          Compra tu celular a crédito con marcas aliadas
         </motion.h3>
 
         <motion.p
@@ -37,22 +38,26 @@ export default function Alianza() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Nuestra propuesta consiste en establecer una alianza con empresas como{" "}
-          <strong className="text-[#FBBF24]">JAMAR</strong> para ampliar su base
-          de clientes mediante presencia directa en territorios clave, personal
-          calificado y experiencia en estrategias comerciales.
+          Contamos con el respaldo de marcas como{" "}
+          <strong className="text-[#FBBF24]">CreditoYa</strong>,{" "}
+          <strong className="text-[#FBBF24]">A lo Credito</strong> y{" "}
+          <strong className="text-[#FBBF24]">Suma Credito</strong> para que
+          puedas acceder fácilmente a un plan de financiación y estrenar el
+          celular que querés.
         </motion.p>
+
         <motion.p
           className="text-lg md:text-xl leading-relaxed text-gray-200"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Ofrecemos{" "}
-          <strong className="text-[#FBBF24]">seguimiento personalizado</strong>,
-          atención dedicada y una red de representantes en constante expansión
-          para impulsar el crecimiento conjunto.
+          Sin trámites complicados, con cuotas cómodas y el respaldo de nuestras
+          marcas aliadas, te ayudamos a dar el siguiente paso hacia tu nuevo
+          celular.
         </motion.p>
+
+        <MarcasCarrusel />
       </div>
     </section>
   );

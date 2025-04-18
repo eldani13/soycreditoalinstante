@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";  
 
 export default function Hero() {
   return (
@@ -19,8 +20,8 @@ export default function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          ¡Tu aliado para el
-          <br /> crecimiento!
+          ¡Tu nuevo celular está
+          <br /> más cerca de lo que crees!
         </motion.h1>
 
         <motion.p
@@ -33,9 +34,21 @@ export default function Hero() {
           <strong className="text-white font-semibold">
             SOY CRÉDITO AL INSTANTE
           </strong>{" "}
-          conectamos tu marca con más personas en todo el país a través de
-          estrategias reales y resultados visibles.
+          te ayudamos a estrenar smartphone hoy mismo, sin tanto papeleo y con
+          pagos accesibles. Crédito fácil, rápido y sin complicaciones.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <Link href="/store">
+            <button className="mt-8 px-8 py-3 bg-[#FBBF24] text-white font-semibold rounded-lg hover:bg-yellow-400 transition">
+              Ver Tienda
+            </button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

@@ -44,7 +44,7 @@ export default function Contacto() {
             <PhoneIcon className="h-8 w-8 text-[#1E40AF]" />
             <div>
               <h4 className="text-lg font-medium text-[#1E40AF]">Llámanos</h4>
-              <p className="text-gray-600">+57 (317) 594 8299</p>
+              <p className="text-gray-600">+57 (321) 123 8459</p>
             </div>
           </motion.div>
 
@@ -58,7 +58,7 @@ export default function Contacto() {
               <h4 className="text-lg font-medium text-[#1E40AF]">
                 Envíanos un correo
               </h4>
-              <p className="text-gray-600">ismael.ortiz1984@hotmail.com</p>
+              <p className="text-gray-600">contacto@hotmail.com</p>
             </div>
           </motion.div>
 
