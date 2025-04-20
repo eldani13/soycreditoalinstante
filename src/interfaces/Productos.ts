@@ -6,6 +6,7 @@ export interface Producto {
     cuotas: string;
     marca: string;
     categoria: string;
+    etiqueta?: string;
     especificaciones: {
       pantalla: string;
       procesador: string;
