@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 export default function Objetivos() {
-  const itemsIzquierda = ["Fácil", "Rápido", "Óptimo", "y al Instante"];
 
   const pasosCredito = [
     "Acércate a una de nuestras tiendas aliadas.",

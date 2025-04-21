@@ -92,44 +92,53 @@ export default function Navbar({ offsetTop = 0 }) {
       </nav>
 
       {!isStorePage && mobileMenuOpen && (
-  <motion.div
-    className="md:hidden bg-[#1E40AF] text-white py-6 px-6 space-y-4"
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -10 }}
-    transition={{ duration: 0.3 }}
-  >
-    <p className="text-lg font-bold border-b border-white pb-2">Menú</p>
+        <motion.div
+          className="md:hidden bg-[#1E40AF] text-white py-6 px-6 space-y-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3 }}
+        >
+          <p className="text-lg font-bold border-b border-white pb-2">Menú</p>
 
-    <a href="#credito" className="block hover:text-[#FBBF24] transition-colors">
-      Solicita tu crédito
-    </a>
-    <a href="#puntos" className="block hover:text-[#FBBF24] transition-colors">
-      Puntos de venta
-    </a>
-    <a href="#quienes" className="block hover:text-[#FBBF24] transition-colors">
-      Nosotros
-    </a>
+          <a
+            href="#credito"
+            className="block hover:text-[#FBBF24] transition-colors"
+          >
+            Solicita tu crédito
+          </a>
+          <a
+            href="#puntos"
+            className="block hover:text-[#FBBF24] transition-colors"
+          >
+            Puntos de venta
+          </a>
+          <a
+            href="#quienes"
+            className="block hover:text-[#FBBF24] transition-colors"
+          >
+            Nosotros
+          </a>
 
-    <Link href="/store" className="block hover:text-[#FBBF24] transition-colors">
-      Tienda
-    </Link>
+          <Link
+            href="/store"
+            className="block hover:text-[#FBBF24] transition-colors"
+          >
+            Tienda
+          </Link>
 
-    <div className="pt-2 border-t border-white flex items-center gap-2">
-      <img src="/colombia.png" alt="Colombia" className="h-4 w-auto" />
-    </div>
+          <div className="pt-2 border-t border-white flex items-center gap-2">
+            <Image src="/colombia.png" alt="Colombia" width={16} height={16} className="h-4 w-auto" />
+          </div>
 
-
-    <Link
-      href="/puntoVenta"
-      className="block text-center bg-[#FBBF24] text-[#1E3A8A] font-semibold px-4 py-2 rounded-full shadow-md hover:bg-yellow-400 transition-colors"
-    >
-      PUNTOS DE PAGO
-    </Link>
-  </motion.div>
-)}
-
-
+          <Link
+            href="/puntoVenta"
+            className="block text-center bg-[#FBBF24] text-[#1E3A8A] font-semibold px-4 py-2 rounded-full shadow-md hover:bg-yellow-400 transition-colors"
+          >
+            PUNTOS DE PAGO
+          </Link>
+        </motion.div>
+      )}
     </motion.header>
   );
 }

@@ -16,23 +16,19 @@ import Beneficios from "@/components/Beneficios";
 
 export default function StorePage() {
   const [marcaFiltro, setMarcaFiltro] = useState("");
-  const [categoriaFiltro, setCategoriaFiltro] = useState("");
   const [busqueda, setBusqueda] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Producto | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const marcas = [...new Set(productos.map((p) => p.marca))];
-  const categorias = [...new Set(productos.map((p) => p.categoria))];
 
   const productosFiltrados = productos.filter((producto) => {
     const filtraMarca = marcaFiltro ? producto.marca === marcaFiltro : true;
-    const filtraCategoria = categoriaFiltro
-      ? producto.categoria === categoriaFiltro
-      : true;
+   
     const filtraBusqueda = busqueda
       ? producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
       : true;
-    return filtraMarca && filtraCategoria && filtraBusqueda;
+    return filtraMarca && filtraBusqueda;
   });
 
   const handleOpenModal = (producto: Producto) => {
@@ -93,22 +89,6 @@ export default function StorePage() {
                 ))}
               </select>
             </div>
-
-            {/* <div className="relative">
-              <AdjustmentsHorizontalIcon className="w-5 h-5 text-gray-400 absolute top-2 left-3" />
-              <select
-                value={categoriaFiltro}
-                onChange={(e) => setCategoriaFiltro(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-800"
-              >
-                <option value="">Todas las categorías</option>
-                {categorias.map((categoria) => (
-                  <option key={categoria} value={categoria}>
-                    {categoria}
-                  </option>
-                ))}
-              </select>
-            </div> */}
           </div>
         </div>
 
