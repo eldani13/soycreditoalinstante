@@ -1,6 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); */
 /* @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap'); */
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
 /* @import "@devnomic/marquee/dist/index.css"; */
@@ -46,7 +46,7 @@ body {
 }
 
 .text-hero {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 3rem; 
   line-height: 1.2; 
@@ -58,7 +58,7 @@ body {
 }
 
 .text-phone {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 3rem; 
   line-height: 1.2; 
@@ -70,7 +70,7 @@ body {
 }
 
 .text-somos {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 3rem; 
   line-height: 1.2; 
@@ -82,7 +82,7 @@ body {
 }
 
 .text-financiar {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 3rem; 
   line-height: 1.2; 
@@ -94,7 +94,7 @@ body {
 }
 
 .text-credito {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 2rem; 
   line-height: 1.2; 
@@ -106,7 +106,7 @@ body {
 }
 
 .text-ventas {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 3rem; 
   line-height: 1.2; 
@@ -118,7 +118,7 @@ body {
 }
 
 .text-alianza {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 3rem; 
   line-height: 1.2; 
@@ -130,7 +130,7 @@ body {
 }
 
 .text-contacto {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 3rem; 
   line-height: 1.2; 
@@ -142,7 +142,7 @@ body {
 }
 
 .text-puntos {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 3rem; 
   line-height: 1.2; 
@@ -154,7 +154,7 @@ body {
 }
 
 .text-pagos {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 1.6rem; 
   line-height: 1.2; 
@@ -166,7 +166,7 @@ body {
 }
 
 .text-medios {
-  font-family: "Poetsen One", sans;
+  font-family: var(--font-poetsen), sans-serif;
   font-weight: 900; 
   font-size: 2rem; 
   line-height: 1.2; 
