@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
 const slider1 = [
   { name: "Samsung Galaxy A05S", image: "/samsung.png" },
@@ -68,19 +69,19 @@ function PhoneCardSlider({ phones }: { phones: typeof slider1 }) {
       </AnimatePresence>
 
       <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-6">
-        <button
-          onClick={prev}
-          className="bg-[#1E40AF] hover:bg-blue-800 text-white font-bold px-4 py-2 rounded-full shadow-xl transition"
-        >
-          ◀
-        </button>
-        <button
-          onClick={next}
-          className="bg-[#1E40AF] hover:bg-blue-800 text-white font-bold px-4 py-2 rounded-full shadow-xl transition"
-        >
-          ▶
-        </button>
-      </div>
+  <button
+    onClick={prev}
+    className="bg-[#1E40AF] hover:bg-blue-800 text-white font-bold p-3 rounded-full shadow-xl transition"
+  >
+    <ChevronLeftIcon className="h-6 w-6" />
+  </button>
+  <button
+    onClick={next}
+    className="bg-[#1E40AF] hover:bg-blue-800 text-white font-bold p-3 rounded-full shadow-xl transition"
+  >
+    <ChevronRightIcon className="h-6 w-6" />
+  </button>
+</div>
     </motion.div>
   );
 }
