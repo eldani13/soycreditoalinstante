@@ -44,10 +44,11 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <Link href="/store">
-            <button className="mt-8 px-8 py-3 bg-[#FBBF24] text-white font-semibold rounded-lg hover:bg-yellow-400 transition cursor-pointer">
-              Ver Tienda
-            </button>
-          </Link>
+  <button className=" mt-3 px-8 py-3 bg-[#FBBF24] text-white font-semibold rounded-lg hover:bg-yellow-400 transition cursor-pointer">
+    Ver Tienda
+  </button>
+</Link>
+
         </motion.div>
       </div>
     </section>
