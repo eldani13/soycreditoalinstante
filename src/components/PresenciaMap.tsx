@@ -38,8 +38,8 @@ export default function PresenciaMap({ zonas }: { zonas: Zona[] }) {
   const position: LatLngTuple = [avgLat, avgLng];
 
   const customIcon = new L.Icon({
-    iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-    iconSize: [25, 41],
+    iconUrl: "/logo2.png",
+    iconSize: [20, 20],
     iconAnchor: [12, 41],
   });
 

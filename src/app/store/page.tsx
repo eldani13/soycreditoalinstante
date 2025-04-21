@@ -66,7 +66,7 @@ export default function StorePage() {
 
       <main className="flex-grow pt-28 pb-16 px-6 max-w-7xl mx-auto w-full">
         <div className="bg-white shadow-xl rounded-3xl p-6 md:p-8 mb-12 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
             <div className="relative">
               <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 absolute top-3.5 left-3" />
               <input
@@ -94,7 +94,7 @@ export default function StorePage() {
               </select>
             </div>
 
-            <div className="relative">
+            {/* <div className="relative">
               <AdjustmentsHorizontalIcon className="w-5 h-5 text-gray-400 absolute top-2 left-3" />
               <select
                 value={categoriaFiltro}
@@ -108,7 +108,7 @@ export default function StorePage() {
                   </option>
                 ))}
               </select>
-            </div>
+            </div> */}
           </div>
         </div>
 

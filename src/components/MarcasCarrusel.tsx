@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 
-const marcas = ["/marca1.png", "/marca2.png", "/marca3.png"];
+const marcas = ["/krediya.png", "/marca2.png", "/marca3.png"];
 
 export default function MarcasCarrusel() {
   return (
     <div className="overflow-hidden py-10">
       <div className="flex animate-marquee gap-12 w-full">
         {[...marcas, ...marcas,...marcas, ...marcas].map((logo, index) => (
-          <div key={index} className="flex-shrink-0">
+          <div key={index} className="flex-shrink-0 flex justify-center items-center">
             <Image
               src={logo}
               alt={`Marca ${index}`}

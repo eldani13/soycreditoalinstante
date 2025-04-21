@@ -1,6 +1,11 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); */
+/* @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
-
+/* @import "@devnomic/marquee/dist/index.css"; */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 :root {
   --background: #ffffff;
@@ -16,7 +21,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1E3A8A;
+    --background: #1e3a8a;
     --foreground: #ededed;
   }
 }
@@ -26,7 +31,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
 
 @keyframes marquee {
   0% {
@@ -39,4 +43,136 @@ body {
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+}
+
+.text-hero {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 3rem; 
+  line-height: 1.2; 
+  color: #FBBF24; 
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
+}
+
+.text-phone {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 3rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
+}
+
+.text-somos {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 3rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
+}
+
+.text-financiar {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 3rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
+}
+
+.text-credito {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 2rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  /* text-align: center;  */
+}
+
+.text-ventas {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 3rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  /* text-align: center;  */
+}
+
+.text-alianza {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 3rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
+}
+
+.text-contacto {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 3rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
+}
+
+.text-puntos {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 3rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
+}
+
+.text-pagos {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 1.6rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
+}
+
+.text-medios {
+  font-family: "Poetsen One", sans;
+  font-weight: 900; 
+  font-size: 2rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
 }

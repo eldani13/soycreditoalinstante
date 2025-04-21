@@ -15,7 +15,7 @@ export default function Hero() {
 
       <div className="relative z-20 max-w-3xl px-4">
         <motion.h1
-          className="text-5xl md:text-6xl font-extrabold leading-tight text-[#FBBF24] drop-shadow-lg"
+          className="text-hero text-5xl md:text-6xl"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

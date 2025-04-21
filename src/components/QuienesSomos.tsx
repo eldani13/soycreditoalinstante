@@ -7,7 +7,7 @@ export default function QuienesSomos() {
     <section id="quienes" className="bg-[#F1F5F9] py-20 px-4">
       <div className="max-w-5xl mx-auto text-center">
         <motion.h3
-          className="text-4xl font-extrabold text-[#1E40AF] mb-4"
+          className="text-somos text-4xl font-extrabold text-[#1E40AF] mb-4"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

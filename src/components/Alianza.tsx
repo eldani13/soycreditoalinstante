@@ -10,7 +10,8 @@ export default function Alianza() {
       id="alianza"
       className="relative py-20 px-6 bg-cover bg-center text-white"
       style={{
-        backgroundImage: "url(/alianza.jpg)",
+        backgroundImage:
+          "linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 50%), linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 50%), url(/alianza.jpg)",
       }}
     >
       <div className="relative max-w-4xl mx-auto text-center z-10">
@@ -24,7 +25,7 @@ export default function Alianza() {
         </motion.div>
 
         <motion.h3
-          className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6"
+          className="text-alianza text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -39,7 +40,9 @@ export default function Alianza() {
           transition={{ duration: 0.8 }}
         >
           Contamos con el respaldo de marcas como{" "}
-          <strong className="text-[#FBBF24]">CreditoYa</strong>,{" "}
+          <strong className="text-[#FBBF24]">KrediYa</strong>,{" "}
+          <strong className="text-[#FBBF24]">Adelanto Colombia</strong>,{" "}
+          <strong className="text-[#FBBF24]">CelYa</strong>,{" "}
           <strong className="text-[#FBBF24]">A lo Credito</strong> y{" "}
           <strong className="text-[#FBBF24]">Suma Credito</strong> para que
           puedas acceder fácilmente a un plan de financiación y estrenar el

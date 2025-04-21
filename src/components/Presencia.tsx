@@ -54,13 +54,13 @@ export default function Presencia() {
         >
           <motion.h3
             id="aliados-heading"
-            className="text-3xl font-extrabold text-[#1E40AF] mb-4"
+            className="text-ventas text-3xl font-extrabold text-[#1E40AF] mb-4"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Aliados comerciales
+            Puntos de ventas
           </motion.h3>
           <div className="w-24 h-10 bg-[#FBBF24] mb-4 rounded-full" />
 
