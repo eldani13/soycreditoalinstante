@@ -70,14 +70,14 @@ export default function Navbar({ offsetTop = 0 }) {
               href="/store"
               className="hover:text-[#FBBF24] transition-colors"
             >
-              Tienda
+              Catalogo
             </Link>
 
             <Link
               href="/puntoVenta"
               className="bg-[#FBBF24] text-[#1E3A8A] font-semibold px-4 py-2 rounded-full shadow-lg hover:bg-yellow-400 transition-colors"
             >
-              Puntos de venta
+              Convenios de pago
             </Link>
           </div>
         )}
@@ -124,7 +124,7 @@ export default function Navbar({ offsetTop = 0 }) {
             href="/store"
             className="block hover:text-[#FBBF24] transition-colors"
           >
-            Tienda
+            Catalogo
           </Link>
 
           <div className="pt-2 border-t border-white flex items-center gap-2">
@@ -135,7 +135,7 @@ export default function Navbar({ offsetTop = 0 }) {
             href="/puntoVenta"
             className="block text-center bg-[#FBBF24] text-[#1E3A8A] font-semibold px-4 py-2 rounded-full shadow-md hover:bg-yellow-400 transition-colors"
           >
-            PUNTOS DE PAGO
+            CONVENIOS DE PAGO
           </Link>
         </motion.div>
       )}

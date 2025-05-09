@@ -176,3 +176,27 @@ body {
   text-transform: uppercase; 
   text-align: center; 
 }
+
+.text-descubri {
+  font-family: var(--font-poetsen), sans-serif;
+  font-weight: 900; 
+  font-size: 3rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  /* text-align: center;  */
+}
+
+.text-beneficios {
+  font-family: var(--font-poetsen), sans-serif;
+  font-weight: 900; 
+  font-size: 1.8rem; 
+  line-height: 1.2; 
+  /* color: #FBBF24;  */
+  
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  text-align: center; 
+}

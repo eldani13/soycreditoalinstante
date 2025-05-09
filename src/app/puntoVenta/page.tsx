@@ -34,17 +34,16 @@ export default function PuntosDeVentas() {
             viewport={{ once: true }}
           >
             A continuación encontrarás los puntos y medios de pago autorizados
-            para realizar tus pagos de SoyCredito.
+            para realizar tus pagos financieros con KrediYa.
           </motion.p>
           <motion.p
-            className="mt-2 font-semibold text-[#1E40AF]"
+            className="mt-2 font-semibold text-[#1E40AF] text-xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Importante: Ningún asesor o persona está autorizada a pedirte o
-            recibir el dinero de tu pago.
+            Importante: No envíes dinero por WhatsApp. Realiza tus pagos quincenales únicamente en los comercios autorizados.
           </motion.p>
         </motion.section>
 
@@ -136,7 +135,7 @@ export default function PuntosDeVentas() {
                       { src: "/sured.png", text: "Código: 605 + tu número de cédula" },
                       {
                         src: "/wompi.png",
-                        text: 'Paga con Wompi <a href="#" class="text-[#FBBF24] underline">aquí</a>.',
+                        text: 'Paga con Wompi.',
                       },
                       { src: "/pse.png", text: "Disponible" },
                       { src: "/transfiya.png", text: "Transferencias inmediatas con Transfiya" },

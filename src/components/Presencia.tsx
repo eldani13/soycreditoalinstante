@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { zonas } from "@/app/data/presencia";
+import { zonas } from "@/data/presencia";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";

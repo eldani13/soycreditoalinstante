@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Modal from "@/components/Modal";
-import { productos } from "../data/telefonos";
+import { productos } from "../../data/telefonos";
 import { Producto } from "@/interfaces/Productos";
 import {
   MagnifyingGlassIcon,
@@ -107,13 +107,13 @@ export default function StorePage() {
 
               <div className="flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto gap-12 relative z-10">
                 <div className="md:w-1/2 text-center md:text-left">
-                  <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wide mb-6 leading-tight">
-                    Descubrí los{" "}
+                  <h1 className="text-descubri text-4xl sm:text-5xl font-extrabold tracking-wide mb-6 leading-tight">
+                    Descubre los{" "}
                     <span className="text-yellow-400">mejores teléfonos</span>
                   </h1>
                   <p className="text-lg sm:text-xl mb-8 text-gray-200">
                     Tecnología de punta, cuotas accesibles, y un catálogo
-                    premium hecho para vos.
+                    premium hecho para ti.
                   </p>
                   <button className="bg-yellow-400 text-[#1E3A8A] font-bold px-8 py-4 rounded-2xl shadow-lg hover:bg-yellow-300 transition-all duration-300">
                     Ver promociones
