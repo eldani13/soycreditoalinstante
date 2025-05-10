@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -13,23 +13,42 @@ import {
 } from "@heroicons/react/24/solid";
 
 import Beneficios from "@/components/Beneficios";
+import { useProducto } from "@/context/ProductoContext";
+import { useRouter } from "next/navigation";
+
+
 
 export default function StorePage() {
   const [marcaFiltro, setMarcaFiltro] = useState("");
   const [busqueda, setBusqueda] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Producto | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [paginaActual, setPaginaActual] = useState(1);
+  const productosPorPagina = 8;
+  const router = useRouter();
 
   const marcas = [...new Set(productos.map((p) => p.marca))];
 
   const productosFiltrados = productos.filter((producto) => {
     const filtraMarca = marcaFiltro ? producto.marca === marcaFiltro : true;
-   
     const filtraBusqueda = busqueda
       ? producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
       : true;
     return filtraMarca && filtraBusqueda;
   });
+
+  const indexUltimo = paginaActual * productosPorPagina;
+  const indexPrimero = indexUltimo - productosPorPagina;
+  const productosPagina = productosFiltrados.slice(indexPrimero, indexUltimo);
+
+  const { setProductoSeleccionado } = useProducto();
+
+  const handleClick = (producto: Producto) => {
+    console.log("Producto antes de setearlo en contexto:", producto);
+    setProductoSeleccionado(producto);
+    localStorage.setItem("productoSeleccionado", JSON.stringify(producto));
+    router.push("/solicitudCredito");
+  };
 
   const handleOpenModal = (producto: Producto) => {
     setSelectedProduct(producto);
@@ -41,14 +60,20 @@ export default function StorePage() {
     setSelectedProduct(null);
   };
 
+  useEffect(() => {
+    setPaginaActual(1);
+  }, [marcaFiltro, busqueda]);
+
   const getEtiquetaColor = (etiqueta: string) => {
     switch (etiqueta) {
-      case "Nuevo":
+      case "Popular":
         return "bg-blue-500";
-      case "Más vendido":
+      case "Económico":
         return "bg-yellow-500";
-      case "Oferta especial":
+      case "Alta resolución":
         return "bg-green-500";
+      case "Alto rendimiento":
+        return "bg-purple-500";
       case "Recomendado":
         return "bg-orange-500";
       default:
@@ -64,22 +89,22 @@ export default function StorePage() {
         <div className="bg-white shadow-xl rounded-3xl p-6 md:p-8 mb-12 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
             <div className="relative">
-              <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 absolute top-3.5 left-3" />
+              <MagnifyingGlassIcon className="w-5 h-5 text-black absolute top-3 left-3" />
               <input
                 type="text"
                 value={busqueda}
                 onChange={(e) => setBusqueda(e.target.value)}
                 placeholder="Buscar por nombre..."
-                className="w-full pl-10 pr-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-800"
+                className="w-full pl-10 pr-4 py-2 rounded-xl border border-black focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-800"
               />
             </div>
 
             <div className="relative">
-              <AdjustmentsHorizontalIcon className="w-5 h-5 text-gray-400 absolute top-2 left-3" />
+              <AdjustmentsHorizontalIcon className="w-5 h-5 text-black absolute top-2 left-3" />
               <select
                 value={marcaFiltro}
                 onChange={(e) => setMarcaFiltro(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-800"
+                className="w-full pl-10 pr-4 py-2 rounded-xl border border-blackfocus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-800"
               >
                 <option value="">Todas las marcas</option>
                 {marcas.map((marca) => (
@@ -93,7 +118,7 @@ export default function StorePage() {
         </div>
 
         <AnimatePresence mode="wait">
-          {busqueda.trim() === "" && (
+          {busqueda.trim() === "" && marcaFiltro.trim() === "" && (
             <motion.section
               key="hero"
               initial={{ opacity: 0, y: 30 }}
@@ -134,11 +159,11 @@ export default function StorePage() {
           )}
         </AnimatePresence>
 
-        {busqueda.trim() === "" && <Beneficios />}
+        {busqueda.trim() === "" && marcaFiltro.trim() === "" && <Beneficios />}
 
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10">
           <AnimatePresence>
-            {productosFiltrados.map((producto) => (
+            {productosPagina.map((producto) => (
               <motion.div
                 key={producto.id}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -179,12 +204,36 @@ export default function StorePage() {
                   Ver detalles
                 </button>
 
-                <button className="bg-[#1E3A8A] text-white font-semibold px-4 py-2 rounded-xl hover:bg-blue-700 transition mt-4">
+                <button
+                  onClick={() => handleClick(producto)}
+                  className="bg-[#1E3A8A] text-white font-semibold px-4 py-2 rounded-xl hover:bg-blue-700 transition mt-4"
+                >
                   Solicitar Crédito
                 </button>
               </motion.div>
             ))}
           </AnimatePresence>
+        </div>
+
+        <div className="flex justify-center items-center mt-10 gap-2 flex-wrap">
+          {Array.from(
+            {
+              length: Math.ceil(productosFiltrados.length / productosPorPagina),
+            },
+            (_, i) => (
+              <button
+                key={i}
+                onClick={() => setPaginaActual(i + 1)}
+                className={`px-4 py-2 rounded-xl text-sm font-medium ${
+                  paginaActual === i + 1
+                    ? "bg-yellow-400 text-[#1E3A8A]"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                }`}
+              >
+                {i + 1}
+              </button>
+            )
+          )}
         </div>
 
         {productosFiltrados.length === 0 && (

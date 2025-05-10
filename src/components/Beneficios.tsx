@@ -12,7 +12,7 @@ import {
           <h2 className="text-beneficios text-xl md:text-2xl font-semibold text-white mb-6">
             ¿Por qué comprarnos?
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex flex-col items-center transition-transform duration-300 transform hover:scale-105">
               <div className="bg-[#FBBF24] p-3 rounded-full shadow-md mb-4">
                 <TruckIcon className="w-10 h-10 text-white" />
@@ -41,7 +41,7 @@ import {
               <div className="bg-[#FBBF24] p-3 rounded-full shadow-md mb-4">
                 <ShieldCheckIcon className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-sm font-semibold text-white">Protección al comprador</h3>
+              <h3 className="text-sm font-semibold text-white">Protección</h3>
               <p className="mt-1 text-xs text-gray-200">Compra de forma segura con nuestra protección.</p>
             </div>
           </div>

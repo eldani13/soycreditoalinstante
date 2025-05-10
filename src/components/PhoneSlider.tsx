@@ -6,15 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const slider1 = [
-  { name: "Samsung Galaxy A05S", image: "/samsung.png" },
-  { name: "Xiaomi Redmi Note 13", image: "/samsung.png" },
-  { name: "Motorola G73", image: "/samsung.png" },
+  { name: "Samsung Galaxy A05s", image: "/SamsungGalaxyA05s.png" },
+  { name: "Xiaomi Redmi Note 14", image: "/XiaomiRedmiNote14.png" },
+  { name: "Infinix Smart 9", image: "/InfinixSmart9.png" },
 ];
 
 const slider2 = [
-  { name: "Tecno Spark Go 2024", image: "/telefono.jpg" },
-  { name: "Infinix Zero 30", image: "/telefono.jpg" },
-  { name: "Oppo Reno 11", image: "/telefono.jpg" },
+  { name: "Tecno Spark 30C", image: "/TecnoSpark30C.png" },
+  { name: "Oppo A80", image: "/OppoA80.png" },
+  { name: "Samsung Galaxy A25 5G", image: "/SamsungGalaxyA255G.png" },
 ];
 
 const brands = [

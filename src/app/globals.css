@@ -47,156 +47,192 @@ body {
 
 .text-hero {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 3rem; 
-  line-height: 1.2; 
-  color: #FBBF24; 
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #fbbf24;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .text-phone {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 3rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .text-somos {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 3rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .text-financiar {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 3rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .text-credito {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 2rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
   /* text-align: center;  */
 }
 
 .text-ventas {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 3rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
   /* text-align: center;  */
 }
 
 .text-alianza {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 3rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .text-contacto {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 3rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  /* text-align: center; */
 }
 
 .text-puntos {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 3rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .text-pagos {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 1.6rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 1.6rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .text-medios {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 2rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .text-descubri {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 3rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
   /* text-align: center;  */
 }
 
 .text-beneficios {
   font-family: var(--font-poetsen), sans-serif;
-  font-weight: 900; 
-  font-size: 1.8rem; 
-  line-height: 1.2; 
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 1.2;
   /* color: #FBBF24;  */
-  
-  letter-spacing: 1px; 
-  text-transform: uppercase; 
-  text-align: center; 
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text-telefonoCredito {
+  font-family: var(--font-poetsen), sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  /* color: #FBBF24;  */
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text-minutos {
+  font-family: var(--font-poetsen), sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  /* color: #FBBF24;  */
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text-funcion {
+  font-family: var(--font-poetsen), sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  /* color: #FBBF24;  */
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }

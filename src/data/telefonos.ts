@@ -640,7 +640,7 @@ export const productos = [
     cuotas: "Cuotas accesibles",
     marca: "Oppo",
     categoria: "Gama media-alta",
-    etiqueta: "5G",
+    etiqueta: "Conectividad 5G",
     especificaciones: {
       pantalla: '6.67" LCD IPS, HD+ (1604 x 720 px), 120Hz',
       procesador: "MediaTek Dimensity 6300 (6 nm)",
