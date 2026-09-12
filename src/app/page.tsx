@@ -1,34 +1,23 @@
-"use client";
-import { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
+import dynamic from "next/dynamic";
+import HomeChrome from "@/components/HomeChrome";
 import Hero from "@/components/Hero";
-import QuienesSomos from "@/components/QuienesSomos";
-import Objetivos from "@/components/Objetivos";
-import Presencia from "@/components/Presencia";
-import Alianza from "@/components/Alianza";
-import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
-import Spam from "@/components/Spam";
-import PhoneSlider from "@/components/PhoneSlider";
-import CreditoCelular from "@/components/CreditoCelular";
-import { Marcas } from "@/components/Marcas";
+
+const PhoneSlider = dynamic(() => import("@/components/PhoneSlider"));
+const Marcas = dynamic(() =>
+  import("@/components/Marcas").then((mod) => mod.Marcas)
+);
+const QuienesSomos = dynamic(() => import("@/components/QuienesSomos"));
+const Objetivos = dynamic(() => import("@/components/Objetivos"));
+const CreditoCelular = dynamic(() => import("@/components/CreditoCelular"));
+const Presencia = dynamic(() => import("@/components/Presencia"));
+const Alianza = dynamic(() => import("@/components/Alianza"));
+const Contacto = dynamic(() => import("@/components/Contacto"));
 
 export default function Home() {
-  const [atTop, setAtTop] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setAtTop(window.scrollY === 0);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <>
-      {atTop && <Spam />}
-      <Navbar offsetTop={atTop ? 40 : 0} />
-      <main className={`pt-[${atTop ? 104 : 64}px] bg-white`}>
+      <HomeChrome>
         <Hero />
         <PhoneSlider />
         <Marcas />
@@ -38,7 +27,7 @@ export default function Home() {
         <Presencia />
         <Alianza />
         <Contacto />
-      </main>
+      </HomeChrome>
       <Footer />
     </>
   );

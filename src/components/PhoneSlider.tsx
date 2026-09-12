@@ -26,6 +26,7 @@ const brands = [
   { name: "tecno", image: "/tecno-logo.png" },
   { name: "motorola", image: "/motorola-logo.png" },
   { name: "realme", image: "/realme-logo.png" },
+  { name: "apple", image: "/apple-logo.svg" },
 ];
 
 function PhoneCardSlider({ phones }: { phones: typeof slider1 }) {
@@ -57,6 +58,9 @@ function PhoneCardSlider({ phones }: { phones: typeof slider1 }) {
             src={phone.image}
             alt={phone.name}
             fill
+            sizes="(max-width: 1024px) 90vw, 420px"
+            quality={70}
+            priority={index === 0}
             className="object-contain transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute bottom-0 w-full bg-[#1E40AF]/90 text-white text-center py-3 rounded-b-xl">
@@ -99,21 +103,24 @@ function BrandLogos() {
         <h4 className="text-lg font-bold text-[#1E40AF] mb-4 text-center">
           Marcas disponibles
         </h4>
-        <div className="flex flex-wrap gap-3 justify-center items-center">
-          {brands.map((brand) => (
-            <div
-              key={brand.name}
-              className="w-16 h-10 relative hover:scale-110 transition-transform"
-            >
-              <Image
-                src={brand.image}
-                alt={brand.name}
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-          ))}
-        </div>
+          <div className="flex flex-wrap gap-3 justify-center items-center">
+            {brands.map((brand) => (
+              <div
+                key={brand.name}
+                className={`relative hover:scale-110 transition-transform ${
+                  brand.name === "apple" ? "h-6 w-6" : "h-6 w-14"
+                }`}
+              >
+                <Image
+                  src={brand.image}
+                  alt={brand.name}
+                  fill
+                  sizes="56px"
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </div>
       </div>
     </motion.div>
   );

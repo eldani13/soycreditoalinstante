@@ -2,20 +2,30 @@
 
 import Image from "next/image";
 
-const marcas = ["/krediya.png", "/marca2.png", "/marca3.png"];
+const marcas = [
+  { src: "/krediya.png", name: "KrediYa" },
+  { src: "/marca1.png", name: "Marca aliada" },
+  { src: "/marca2.png", name: "A lo Crédito" },
+  { src: "/marca3.png", name: "CréditoYa" },
+];
 
 export default function MarcasCarrusel() {
+  const logos = [...marcas, ...marcas, ...marcas, ...marcas];
+
   return (
-    <div className="overflow-hidden py-10">
-      <div className="flex animate-marquee gap-12 w-full">
-        {[...marcas, ...marcas,...marcas, ...marcas].map((logo, index) => (
-          <div key={index} className="flex-shrink-0 flex justify-center items-center">
+    <div className="mt-10 overflow-hidden py-2">
+      <div className="animate-marquee flex w-max items-center gap-14">
+        {logos.map((logo, index) => (
+          <div
+            key={`${logo.name}-${index}`}
+            className="flex h-20 w-44 shrink-0 items-center justify-center"
+          >
             <Image
-              src={logo}
-              alt={`Marca ${index}`}
-              width={100}
-              height={100}
-              className="object-contain opacity-80 hover:opacity-100 transition"
+              src={logo.src}
+              alt={logo.name}
+              width={176}
+              height={72}
+              className="h-16 w-auto max-w-[176px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]"
             />
           </div>
         ))}

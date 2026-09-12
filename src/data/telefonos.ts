@@ -1,4 +1,7 @@
-export const productos = [
+import { productosNuevos } from "./telefonosNuevos";
+import { productosIphones } from "./telefonosIphones";
+
+const productosActuales = [
   {
     id: 1,
     nombre: "Samsung Galaxy A05s",
@@ -771,4 +774,10 @@ export const productos = [
       nfc: "No disponible",
     },
   },
+];
+
+export const productos = [
+  ...productosActuales,
+  ...productosNuevos,
+  ...productosIphones,
 ];

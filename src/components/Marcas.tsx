@@ -1,16 +1,18 @@
-import React from "react";
+"use client";
+
 import Slider from "react-slick";
 import Image from "next/image";
 
 const sponsors = [
-  { image: "/xiaomi-logo.png" },
-  { image: "/samsung-logo.png" },
-  { image: "/oppo-logo.png" },
-  { image: "/tecno-logo.png" },
-  { image: "/realme-logo.png" },
-  { image: "/motorola-logo.png" },
-  { image: "/infinix-logo.png" },
-  { image: "/honor-logo.png" },
+  { image: "/xiaomi-logo.png", name: "Xiaomi" },
+  { image: "/samsung-logo.png", name: "Samsung" },
+  { image: "/oppo-logo.png", name: "Oppo" },
+  { image: "/tecno-logo.png", name: "Tecno" },
+  { image: "/realme-logo.png", name: "Realme" },
+  { image: "/motorola-logo.png", name: "Motorola" },
+  { image: "/infinix-logo.png", name: "Infinix" },
+  { image: "/honor-logo.png", name: "Honor" },
+  { image: "/apple-logo.svg", name: "Apple", icono: true },
 ];
 
 export const Marcas = () => {
@@ -18,45 +20,47 @@ export const Marcas = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 2200,
     arrows: false,
     responsive: [
       {
         breakpoint: 1280,
-        settings: {
-          slidesToShow: 3,
-        },
+        settings: { slidesToShow: 4 },
       },
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
+        settings: { slidesToShow: 3 },
       },
       {
         breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-        },
+        settings: { slidesToShow: 2 },
       },
     ],
   };
 
   return (
-    <div className="mx-auto mt-10 mb-10 px-4 max-w-7xl">
+    <div className="mx-auto mb-12 mt-16 max-w-7xl px-4">
+      <h3 className="mb-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+        Marcas aliadas
+      </h3>
       <Slider {...settings}>
-        {sponsors.map((sponsor, index) => (
-          <div key={index}>
-            <div className="flex justify-center items-center h-full">
-              <div className="w-32 h-32 md:w-48 md:h-48 relative flex justify-center items-center mx-auto">
+        {sponsors.map((sponsor) => (
+          <div key={sponsor.name} className="px-2">
+            <div className="flex h-20 items-center justify-center">
+              <div
+                className={`relative ${
+                  sponsor.icono ? "h-8 w-8" : "h-8 w-28"
+                }`}
+              >
                 <Image
                   src={sponsor.image}
-                  alt={`Sponsor ${index}`}
-                  layout="fill"
-                  objectFit="contain"
+                  alt={sponsor.name}
+                  fill
+                  sizes="112px"
+                  className="object-contain"
                 />
               </div>
             </div>

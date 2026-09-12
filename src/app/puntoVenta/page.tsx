@@ -4,167 +4,219 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  IdentificationIcon,
+  BanknotesIcon,
+  MapPinIcon,
+  BoltIcon,
+} from "@heroicons/react/24/outline";
+
+const datosEfecty = [
+  {
+    etiqueta: "Nombre del convenio",
+    valor: "KREDIYA INTEGRACIÓN",
+  },
+  {
+    etiqueta: "Número de convenio",
+    valor: "113153",
+  },
+];
+
+const requisitos = [
+  {
+    icono: IdentificationIcon,
+    texto: "Debes presentar tu cédula de ciudadanía.",
+  },
+  {
+    icono: BanknotesIcon,
+    texto: "Pagos desde $20.000 hasta $1.000.000 COP.",
+  },
+  {
+    icono: MapPinIcon,
+    texto: "Habilitado en todos los puntos Efecty a nivel nacional.",
+  },
+  {
+    icono: BoltIcon,
+    texto: "El pago se refleja automáticamente, sin esperas.",
+  },
+];
+
+const otrosMedios = [
+  {
+    src: "/refacil.png",
+    nombre: "Refácil",
+    texto: "Paga desde la Krediapp con Daviplata o Nequi. Se refleja de inmediato.",
+  },
+  {
+    src: "/bancolombia.png",
+    nombre: "Bancolombia",
+    texto: "Convenio 89058. Referencia: tu número de cédula.",
+  },
+  {
+    src: "/western-union.png",
+    nombre: "Western Union",
+    texto: "Código: 605 + tu número de cédula.",
+  },
+  {
+    src: "/servi.png",
+    nombre: "Servientrega",
+    texto: "Código: 605 + tu número de cédula.",
+  },
+  {
+    src: "/sured.png",
+    nombre: "SuRed",
+    texto: "Código: 605 + tu número de cédula.",
+  },
+  {
+    src: "/wompi.png",
+    nombre: "Wompi",
+    texto: "Paga en línea con Wompi.",
+  },
+  {
+    src: "/pse.png",
+    nombre: "PSE",
+    texto: "Transferencia bancaria disponible.",
+  },
+  {
+    src: "/transfiya.png",
+    nombre: "Transfiya",
+    texto: "Transferencias inmediatas con Transfiya.",
+  },
+];
 
 export default function PuntosDeVentas() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-slate-50">
       <Navbar />
-      <main className="flex-grow pt-28 pb-16 px-6 max-w-7xl mx-auto w-full">
+      <main className="mx-auto w-full max-w-7xl flex-grow px-4 pb-16 pt-28 sm:px-6">
         <motion.section
-          className="text-center py-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          className="py-10 text-center"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <motion.h1
-            className="text-puntos text-4xl font-extrabold text-[#1E40AF]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <h1 className="text-puntos text-3xl font-extrabold text-[#1E3A8A] sm:text-4xl">
             Puntos de pago con reporte automático
-          </motion.h1>
-          <motion.p
-            className="mt-4 text-lg text-gray-700 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            A continuación encontrarás los puntos y medios de pago autorizados
-            para realizar tus pagos financieros con KrediYa.
-          </motion.p>
-          <motion.p
-            className="mt-2 font-semibold text-[#1E40AF] text-xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Importante: No envíes dinero por WhatsApp. Realiza tus pagos quincenales únicamente en los comercios autorizados.
-          </motion.p>
+          </h1>
+          <div className="mx-auto mt-4 h-1.5 w-24 rounded-full bg-[#FBBF24]" />
+          <p className="mx-auto mt-5 max-w-2xl text-base text-slate-600 sm:text-lg">
+            Aquí están los puntos y medios autorizados para tus pagos
+            financieros con KrediYa.
+          </p>
+
+          <p className="mx-auto mt-7 max-w-2xl text-[15px] leading-relaxed text-[#1E3A8A] sm:text-base">
+            <span className="mr-2 inline-block bg-[#FBBF24] px-2 py-0.5 font-extrabold text-[#1E3A8A]">
+              Importante
+            </span>
+            No envíes dinero por WhatsApp. Haz tus pagos quincenales solo en los
+            comercios autorizados.
+          </p>
         </motion.section>
 
         <motion.section
-          className="bg-[#f6cc00] rounded-3xl py-10 px-8 flex flex-col md:flex-row items-center gap-10 shadow-lg"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          className="overflow-hidden rounded-3xl border border-[#FBBF24]/40 bg-[#FBBF24] shadow-lg"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <motion.div
-            className="md:w-1/2 text-center md:text-left"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-pagos text-3xl font-bold text-gray-800">
-              Pagos fáciles, al instante y sin enredos
-            </h2>
-            <p className="mt-2 text-lg font-semibold text-white">
-              ¡Ahora podrás ver tus pagos reflejados al instante!
-            </p>
-            <p className="mt-4 text-gray-800">
-              En cualquier punto <span className="font-bold">Efecty</span>, tu
-              transacción se ve reflejada automáticamente, para que disfrutes de
-              tu celular...{" "}
-              <a href="#" className="underline font-bold text-white">
-                SIN LÍMITES
-              </a>
-              .
-            </p>
-            <ul className="mt-4 list-disc list-inside text-sm text-gray-800 space-y-1">
-              <li>
-                <strong>Nombre del convenio:</strong> KREDIYA INTEGRACIÓN
-              </li>
-              <li>
-                <strong>Número de convenio con Efecty:</strong> 113153
-              </li>
-              <li>Debes presentar tu cédula de ciudadanía.</li>
-              <li>Pagos desde $20.000 hasta $1.000.000 COP.</li>
-              <li>
-                Habilitado en todos los puntos <strong>Efecty</strong> a nivel
-                nacional.
-              </li>
-            </ul>
-          </motion.div>
+          <div className="flex flex-col items-center gap-8 px-6 py-10 md:flex-row md:items-center md:gap-12 md:px-10">
+            <div className="md:w-1/2">
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-[#1E3A8A]/70">
+                Convenio principal
+              </p>
+              <h2 className="text-pagos !text-left text-2xl font-bold text-[#1E3A8A] sm:text-3xl">
+                Pagos fáciles, al instante y sin enredos
+              </h2>
+              <p className="mt-3 text-base font-bold text-[#1E3A8A]">
+                Tus pagos se ven reflejados al instante.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-[#1E3A8A]/85 sm:text-base">
+                En cualquier punto <strong>Efecty</strong> la transacción queda
+                reportada automáticamente, para que disfrutes tu celular{" "}
+                <span className="font-extrabold">sin límites</span>.
+              </p>
 
-          <motion.div
-            className="md:w-1/2"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Image src="/efecty.png" alt="Efecty" width={400} height={400} />
-          </motion.div>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {datosEfecty.map((dato) => (
+                  <div
+                    key={dato.etiqueta}
+                    className="rounded-2xl bg-white/80 px-4 py-3 shadow-sm"
+                  >
+                    <p className="text-[11px] font-semibold uppercase tracking-wide text-[#1E3A8A]/60">
+                      {dato.etiqueta}
+                    </p>
+                    <p className="mt-1 text-sm font-extrabold text-[#1E3A8A] sm:text-base">
+                      {dato.valor}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <ul className="mt-5 space-y-2.5">
+                {requisitos.map(({ icono: Icono, texto }) => (
+                  <li
+                    key={texto}
+                    className="flex items-start gap-2.5 text-sm text-[#1E3A8A]"
+                  >
+                    <Icono className="mt-0.5 h-5 w-5 shrink-0" />
+                    <span>{texto}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex w-full justify-center md:w-1/2">
+              <div className="relative w-full max-w-md overflow-hidden rounded-3xl bg-white/40 p-3">
+                <Image
+                  src="/efecty.png"
+                  alt="Paga en Efecty"
+                  width={480}
+                  height={480}
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
         </motion.section>
 
         <motion.section
-          className="py-14 bg-white"
-          initial={{ opacity: 0, y: 30 }}
+          className="py-14"
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-medios text-2xl font-bold text-[#1E40AF] text-center mb-10">
+          <h3 className="text-medios mb-8 text-2xl font-bold text-[#1E3A8A]">
             Otros medios de pago
           </h3>
 
-          <div className="space-y-12 px-4">
-            {[0, 1].map((row) => (
-              <motion.div
-                key={row}
-                className="grid grid-cols-2 md:grid-cols-4 gap-8 items-start text-center"
-                initial={{ opacity: 0, y: 30 }}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {otrosMedios.map((item, i) => (
+              <motion.article
+                key={item.nombre}
+                className="flex flex-col items-center rounded-2xl border border-slate-200 bg-white px-5 py-6 text-center shadow-sm transition hover:border-[#FBBF24]/60 hover:shadow-md"
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: row * 0.2 }}
+                transition={{ duration: 0.4, delay: i * 0.04 }}
                 viewport={{ once: true }}
               >
-                {(row === 0
-                  ? [
-                      { src: "/refacil.png", text: "Paga desde la krediapp con Daviplata o Nequi. Tu pago se refleja ¡de inmediato!" },
-                      { src: "/bancolombia.png", text: "Convenio: 89058\nReferencia: tu número de cédula" },
-                      { src: "/western-union.png", text: "Código: 605 + tu número de cédula" },
-                      { src: "/servi.png", text: "Código: 605 + tu número de cédula" },
-                    ]
-                  : [
-                      { src: "/sured.png", text: "Código: 605 + tu número de cédula" },
-                      {
-                        src: "/wompi.png",
-                        text: 'Paga con Wompi.',
-                      },
-                      { src: "/pse.png", text: "Disponible" },
-                      { src: "/transfiya.png", text: "Transferencias inmediatas con Transfiya" },
-                    ]
-                ).map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <Image
-                      src={item.src}
-                      alt=""
-                      width={100}
-                      height={50}
-                      className="mx-auto"
-                    />
-                    <p
-                      className="text-sm mt-3 text-black"
-                      dangerouslySetInnerHTML={{ __html: item.text }}
-                    />
-                  </motion.div>
-                ))}
-              </motion.div>
+                <div className="flex h-16 items-center justify-center">
+                  <Image
+                    src={item.src}
+                    alt={item.nombre}
+                    width={120}
+                    height={56}
+                    className="max-h-14 w-auto object-contain"
+                  />
+                </div>
+                <h4 className="mt-4 text-sm font-bold text-[#1E3A8A]">
+                  {item.nombre}
+                </h4>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                  {item.texto}
+                </p>
+              </motion.article>
             ))}
-
-            <hr className="border-t border-gray-300 mt-12" />
           </div>
         </motion.section>
       </main>

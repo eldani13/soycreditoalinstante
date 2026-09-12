@@ -2,143 +2,118 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { enlaces } from "@/data/enlaces";
 
 export default function Navbar({ offsetTop = 0 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isStorePage = pathname === "/store";
+
+  const esActivo = (href: string) => {
+    if (href === "/store") return pathname === "/store";
+    if (href === "/puntoVenta") return pathname === "/puntoVenta";
+    return false;
+  };
+
+  const cerrarMenu = () => setMobileMenuOpen(false);
 
   return (
     <motion.header
-      className={`fixed left-0 w-full z-50 bg-gradient-to-r from-[#1E3A8A] to-[#1E40AF] text-white shadow-lg`}
+      className="fixed left-0 z-50 w-full border-b border-white/10 bg-[#1E3A8A]/95 text-white shadow-lg backdrop-blur-md"
       style={{ top: offsetTop }}
       initial={{ top: 0 }}
       animate={{ top: offsetTop }}
       transition={{ duration: 0.3 }}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-4">
+      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link href="/" className="flex min-w-0 items-center gap-3" onClick={cerrarMenu}>
           <Image
             src="/logo.png"
             alt="Logo"
-            width={42}
-            height={42}
-            className="w-auto"
+            width={40}
+            height={40}
+            className="h-10 w-10 shrink-0 object-contain"
           />
-          <h1 className="text-2xl font-bold text-white tracking-wide">
+          <h1 className="truncate text-lg font-extrabold tracking-tight sm:text-xl">
             Crédito al Instante
           </h1>
         </Link>
 
-        {!isStorePage && (
-          <div className="hidden md:flex items-center space-x-6 font-medium">
-            <a
-              href="#quienes"
-              className="hover:text-[#FBBF24] transition-colors"
-            >
-              Quiénes somos
-            </a>
-            <a
-              href="#objetivos"
-              className="hover:text-[#FBBF24] transition-colors"
-            >
-              Objetivos
-            </a>
-            <a
-              href="#presencia"
-              className="hover:text-[#FBBF24] transition-colors"
-            >
-              Presencia
-            </a>
-            <a
-              href="#alianza"
-              className="hover:text-[#FBBF24] transition-colors"
-            >
-              Alianza
-            </a>
-            <a
-              href="#contacto"
-              className="hover:text-[#FBBF24] transition-colors"
-            >
-              Contacto
-            </a>
+        <div className="hidden items-center gap-1 lg:flex">
+          {enlaces.map((enlace) => (
             <Link
-              href="/store"
-              className="hover:text-[#FBBF24] transition-colors"
+              key={enlace.href}
+              href={enlace.href}
+              className={`rounded-full px-3 py-2 text-sm font-medium transition ${
+                esActivo(enlace.href)
+                  ? "bg-white/15 text-[#FBBF24]"
+                  : "text-white/90 hover:bg-white/10 hover:text-[#FBBF24]"
+              }`}
             >
-              Catalogo
+              {enlace.label}
             </Link>
-
-            <Link
-              href="/puntoVenta"
-              className="bg-[#FBBF24] text-[#1E3A8A] font-semibold px-4 py-2 rounded-full shadow-lg hover:bg-yellow-400 transition-colors"
-            >
-              Convenios de pago
-            </Link>
-          </div>
-        )}
-
-        {!isStorePage && (
-          <div className="md:hidden">
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              <Bars3Icon className="h-6 w-6 text-white" />
-            </button>
-          </div>
-        )}
-      </nav>
-
-      {!isStorePage && mobileMenuOpen && (
-        <motion.div
-          className="md:hidden bg-[#1E40AF] text-white py-6 px-6 space-y-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.3 }}
-        >
-          <p className="text-lg font-bold border-b border-white pb-2">Menú</p>
-
-          <a
-            href="#credito"
-            className="block hover:text-[#FBBF24] transition-colors"
-          >
-            Solicita tu crédito
-          </a>
-          <a
-            href="#puntos"
-            className="block hover:text-[#FBBF24] transition-colors"
-          >
-            Puntos de venta
-          </a>
-          <a
-            href="#quienes"
-            className="block hover:text-[#FBBF24] transition-colors"
-          >
-            Nosotros
-          </a>
-
-          <Link
-            href="/store"
-            className="block hover:text-[#FBBF24] transition-colors"
-          >
-            Catalogo
-          </Link>
-
-          <div className="pt-2 border-t border-white flex items-center gap-2">
-            <Image src="/colombia.png" alt="Colombia" width={16} height={16} className="h-4 w-auto" />
-          </div>
+          ))}
 
           <Link
             href="/puntoVenta"
-            className="block text-center bg-[#FBBF24] text-[#1E3A8A] font-semibold px-4 py-2 rounded-full shadow-md hover:bg-yellow-400 transition-colors"
+            className="ml-2 rounded-full bg-[#FBBF24] px-4 py-2 text-sm font-bold text-[#1E3A8A] shadow-sm transition hover:bg-yellow-300"
           >
-            CONVENIOS DE PAGO
+            Convenios de pago
           </Link>
-        </motion.div>
-      )}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen((abierto) => !abierto)}
+          className="rounded-xl p-2 text-white transition hover:bg-white/10 lg:hidden"
+          aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+        >
+          {mobileMenuOpen ? (
+            <XMarkIcon className="h-6 w-6" />
+          ) : (
+            <Bars3Icon className="h-6 w-6" />
+          )}
+        </button>
+      </nav>
+
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            className="border-t border-white/10 bg-[#1E3A8A] px-4 py-4 lg:hidden"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="flex flex-col gap-1">
+              {enlaces.map((enlace) => (
+                <Link
+                  key={enlace.href}
+                  href={enlace.href}
+                  onClick={cerrarMenu}
+                  className={`rounded-xl px-4 py-3 text-sm font-medium transition ${
+                    esActivo(enlace.href)
+                      ? "bg-white/15 text-[#FBBF24]"
+                      : "text-white hover:bg-white/10 hover:text-[#FBBF24]"
+                  }`}
+                >
+                  {enlace.label}
+                </Link>
+              ))}
+              <Link
+                href="/puntoVenta"
+                onClick={cerrarMenu}
+                className="mt-2 rounded-xl bg-[#FBBF24] px-4 py-3 text-center text-sm font-bold text-[#1E3A8A]"
+              >
+                Convenios de pago
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
