@@ -1,20 +1,6 @@
 "use client";
 import { createContext, useContext, useState, ReactNode } from "react";
-
-interface Producto {
-  id: number;
-  nombre: string;
-  imagen: string;
-  especificaciones: {
-    ram?: string;
-    almacenamiento?: string;
-    procesador?: string;
-    pantalla?: string;
-    bateria?: string;
-    camara?: string;
-  };
-  
-}
+import { Producto } from "@/interfaces/Productos";
 
 interface ProductoContextType {
   productoSeleccionado: Producto | null;
