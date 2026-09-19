@@ -52,10 +52,10 @@ export default function Alianza() {
         >
           Contamos con el respaldo de marcas como{" "}
           <strong className="text-[#FBBF24]">KrediYa</strong>,{" "}
-          <strong className="text-[#FBBF24]">Adelanto Colombia</strong>,{" "}
-          <strong className="text-[#FBBF24]">CelYa</strong>,{" "}
-          <strong className="text-[#FBBF24]">A lo Credito</strong> y{" "}
-          <strong className="text-[#FBBF24]">Suma Credito</strong> para que
+          <strong className="text-[#FBBF24]">A lo Crédito</strong>,{" "}
+          <strong className="text-[#FBBF24]">Addi</strong>,{" "}
+          <strong className="text-[#FBBF24]">Bold</strong> y{" "}
+          <strong className="text-[#FBBF24]">Cash 24/7</strong> para que
           puedas acceder fácilmente a un plan de financiación y estrenar el
           celular que querés.
         </motion.p>

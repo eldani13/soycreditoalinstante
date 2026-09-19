@@ -23,13 +23,54 @@ const campo =
 
 export default function Contacto() {
   const [isAliado, setIsAliado] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [estado, setEstado] = useState<"idle" | "ok" | "error">("idle");
+  const [error, setError] = useState("");
 
   const handleAsuntoChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setIsAliado(e.target.value === "Aliado");
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const datos = new FormData(form);
+
+    setEnviando(true);
+    setEstado("idle");
+    setError("");
+
+    try {
+      const respuesta = await fetch("/api/contacto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre: datos.get("nombre"),
+          correo: datos.get("correo"),
+          telefono: datos.get("telefono"),
+          asunto: datos.get("asunto"),
+          tienda: datos.get("tienda"),
+          mensaje: datos.get("mensaje"),
+          empresa: datos.get("empresa"),
+        }),
+      });
+      const json = await respuesta.json();
+      if (!respuesta.ok || !json.ok) {
+        throw new Error(json.error || "No se pudo enviar.");
+      }
+      form.reset();
+      setIsAliado(false);
+      setEstado("ok");
+    } catch (err) {
+      setEstado("error");
+      setError(
+        err instanceof Error
+          ? err.message
+          : "No se pudo enviar el mensaje. Intenta de nuevo."
+      );
+    } finally {
+      setEnviando(false);
+    }
   };
 
   return (
@@ -114,25 +155,37 @@ export default function Contacto() {
         >
           <input
             type="text"
+            name="empresa"
+            tabIndex={-1}
+            autoComplete="off"
+            className="hidden"
+            aria-hidden="true"
+          />
+          <input
+            type="text"
             name="nombre"
             placeholder="Nombre completo"
+            required
             className={campo}
           />
           <input
             type="email"
             name="correo"
             placeholder="Correo electrónico"
+            required
             className={campo}
           />
           <input
             type="tel"
             name="telefono"
             placeholder="Número de teléfono"
+            required
             className={campo}
           />
           <select
             name="asunto"
             className={`${campo} appearance-none`}
+            required
             onChange={handleAsuntoChange}
             defaultValue=""
           >
@@ -155,14 +208,25 @@ export default function Contacto() {
           <textarea
             name="mensaje"
             placeholder="Tu mensaje"
+            required
             className={`${campo} h-36 resize-none`}
           />
 
+          {estado === "ok" && (
+            <p className="text-sm font-medium text-green-700">
+              Mensaje enviado. Te responderemos al correo que dejaste.
+            </p>
+          )}
+          {estado === "error" && (
+            <p className="text-sm font-medium text-red-600">{error}</p>
+          )}
+
           <button
             type="submit"
-            className="w-full rounded-2xl bg-[#1E40AF] px-6 py-3.5 text-lg font-semibold text-white transition hover:bg-[#1E3A8A]"
+            disabled={enviando}
+            className="w-full rounded-2xl bg-[#1E40AF] px-6 py-3.5 text-lg font-semibold text-white transition hover:bg-[#1E3A8A] disabled:cursor-not-allowed disabled:opacity-70"
           >
-            Enviar mensaje
+            {enviando ? "Enviando..." : "Enviar mensaje"}
           </button>
         </motion.form>
       </div>

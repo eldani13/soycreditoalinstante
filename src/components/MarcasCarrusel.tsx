@@ -4,9 +4,10 @@ import Image from "next/image";
 
 const marcas = [
   { src: "/krediya.png", name: "KrediYa" },
-  { src: "/marca1.png", name: "Marca aliada" },
   { src: "/marca2.png", name: "A lo Crédito" },
-  { src: "/marca3.png", name: "CréditoYa" },
+  { src: "/addi.png", name: "Addi" },
+  { src: "/bold.png", name: "Bold" },
+  { src: "/cash.png", name: "Cash 24/7" },
 ];
 
 export default function MarcasCarrusel() {
@@ -25,7 +26,7 @@ export default function MarcasCarrusel() {
               alt={logo.name}
               width={176}
               height={72}
-              className="h-16 w-auto max-w-[176px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]"
+              className="h-16 w-auto max-w-[176px] object-contain drop-shadow-[0_2px_10px_rgba(255,255,255,0.28)]"
             />
           </div>
         ))}
